@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .case-converter {
+            display: block;
+        }
+
+        body {
+            background-color: darkgray;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 15px;
+            padding: 20px 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: white;
+            padding: 5px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="case-converter">
+    <h1 class="title">Case Converter</h1>
+    <label>
+        <textarea></textarea>
+    </label>
+    <button id="upper-case">Upper Case</button>
+    <button id="lower-case">Lower Case</button>
+    <button id="proper-case">Proper Case</button>
+    <button id="sentence-case">Sentence Case</button>
+    <button id="save-text-file">Save Text File</button>
+</div>
+
+<script>
+    let textArea;
+    // UPPER CASE
+    document.getElementById("upper-case").addEventListener("click", () => {
+        textArea = document.getElementsByTagName("textarea")[0].value;
+        document.getElementsByTagName("textarea")[0].value = textArea.toUpperCase();
+    });
+    // LOWER CASE
+    document.getElementById("lower-case").addEventListener("click", () => {
+        textArea = document.getElementsByTagName("textarea")[0].value;
+        document.getElementsByTagName("textarea")[0].value = textArea.toLowerCase();
+    });
+    // PROPER CASE
+    document.getElementById("proper-case").addEventListener("click", () => {
+        textArea = document.querySelector("textarea");
+        let words = textArea.value.toLowerCase().split(' '); // split to words and save to an array
+        let newText = [];
+
+        words.forEach((word) => {
+            newText.push(word.charAt(0).toUpperCase().concat(word.slice(1)));
+        });
+
+        textArea.value = newText.join(" ");
+    });
+    // SENTENCE CASE
+    document.getElementById("sentence-case").addEventListener("click", () => {
+        textArea = document.querySelector("textarea");
+        let sentences = textArea.value.toLowerCase().split('. '); // split to sentences and save to an array
+        let newText = [];
+
+        sentences.forEach((sentence) => {
+            newText.push(sentence.charAt(0).toUpperCase().concat(sentence.slice(1)));
+        });
+
+        textArea.value = newText.join(". ");
+    });
+    // DOWNLOAD BUTTON
+    document.getElementById("save-text-file").addEventListener("click", () => {
+        download("text.txt",document.getElementsByTagName("textarea")[0].value);
+    });
+    // DOWNLOAD FUNCTION
+    function download(filename, text) {
+        let element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+
+</script>
+</body>
+</html>
