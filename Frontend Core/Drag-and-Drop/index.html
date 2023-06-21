@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .draggable {
+            width: fit-content;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: #96b38a;
+            color: #333;
+            cursor: move;
+        }
+        .target {
+            padding: 10px;
+            margin-top: 15px;
+            width: 250px;
+            height: 100px;
+            text-align: center;
+            border-radius: 4px;
+            border: 2px solid #ccc;
+            color: #333;
+        }
+        .hovered {
+            border: 2px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="draggable" class="draggable" draggable="true" ondragstart="dragStartHandler(event)" ondragend="dragEndHandler(event)">Drag me</div>
+
+<div id="target" class="target" ondragover="dragOverHandler(event)" ondragenter="dragEnterHandler(event)"
+        ondragleave="dragLeaveHandler(event)" ondrop="dropHandler(event)">Target Area</div>
+
+
+<script>
+
+    const targetItem = document.getElementById("target");
+
+    function dragStartHandler(event) {
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text/plain", event.target.id);
+    }
+
+    function dragOverHandler(event) {
+        event.preventDefault();
+    }
+
+    // Add a 'hovered' class when the dragged element hits the target area
+    function dragEnterHandler(event) {
+        targetItem.classList.add('hovered');
+    }
+
+    // Remove the 'hovered' class when the dragged element leaves the target area
+    function dragLeaveHandler(event) {
+        targetItem.classList.remove('hovered');
+    }
+
+    function dropHandler(event) {
+        event.stopPropagation();
+        const data = event.dataTransfer.getData("text/plain");
+        event.target.appendChild(document.getElementById(data));
+        return false;
+    }
+
+    function dragEndHandler(event) {
+        targetItem.classList.remove('hovered');
+    }
+</script>
+</body>
+</html>
