@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta charset="utf-8">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="white-keys">
+        <kbd id="kbd_A">A</kbd>
+        <kbd id="kbd_S">S</kbd>
+        <kbd id="kbd_D">D</kbd>
+        <kbd id="kbd_F">F</kbd>
+        <kbd id="kbd_G">G</kbd>
+        <kbd id="kbd_H">H</kbd>
+        <kbd id="kbd_J">J</kbd>
+    </div>
+    <div class="black-keys">
+        <kbd id="kbd_W">W</kbd>
+        <kbd id="kbd_E">E</kbd>
+        <kbd id="kbd_T">T</kbd>
+        <kbd id="kbd_Y">Y</kbd>
+        <kbd id="kbd_U">U</kbd>
+    </div>
+</div>
+<script>
+    // WHITE KEYS MOUSE CLICK
+    document.getElementById("kbd_A").addEventListener("mousedown", (e) => {
+        let audio = new Audio("audio/White Keys/A.mp3");
+
+        // document.getElementById("kbd_A").style.boxShadow = "-10px 5px 5px black";
+        // document.getElementById("kbd_A").style.transition = "box-shadow 2s easy-in-out";
+
+
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_S").addEventListener("click", (e) => {
+        let audio = new Audio("audio/White Keys/S.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_D").addEventListener("click", (e) => {
+        let audio = new Audio("audio/White Keys/D.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_F").addEventListener("click", (e) => {
+        let audio = new Audio("audio/White Keys/F.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_G").addEventListener("click", (e) => {
+        let audio = new Audio("audio/White Keys/G.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_H").addEventListener("click", (e) => {
+        let audio = new Audio("audio/White Keys/H.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_J").addEventListener("click", (e) => {
+        let audio = new Audio("audio/White Keys/J.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    // BLACK KEYS MOUSE CLICK
+    document.getElementById("kbd_W").addEventListener("click", (e) => {
+        let audio = new Audio("audio/Black Keys/W.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_E").addEventListener("click", (e) => {
+        let audio = new Audio("audio/Black Keys/E.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_T").addEventListener("click", (e) => {
+        let audio = new Audio("audio/Black Keys/T.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_Y").addEventListener("click", (e) => {
+        let audio = new Audio("audio/Black Keys/Y.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.getElementById("kbd_U").addEventListener("click", (e) => {
+        let audio = new Audio("audio/Black Keys/U.mp3");
+        console.log(audio.play());
+        console.log("The '" + e.key + "' key is pressed.");
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "KeyA") {
+            let audio = new Audio("audio/White Keys/A.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyS") {
+            let audio = new Audio("audio/White Keys/S.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyD") {
+            let audio = new Audio("audio/White Keys/D.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyF") {
+            let audio = new Audio("audio/White Keys/F.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyG") {
+            let audio = new Audio("audio/White Keys/G.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyH") {
+            let audio = new Audio("audio/White Keys/H.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+        if (event.code === "KeyJ") {
+            let audio = new Audio("audio/White Keys/J.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        // BLACK KEYS
+        if (event.code === "KeyW") {
+            let audio = new Audio("audio/Black Keys/W.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyE") {
+            let audio = new Audio("audio/Black Keys/E.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyT") {
+            let audio = new Audio("audio/Black Keys/T.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code === "KeyY") {
+            let audio = new Audio("audio/Black Keys/Y.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+        if (event.code === "KeyU") {
+            let audio = new Audio("audio/Black Keys/U.mp3");
+            console.log(audio.play());
+            console.log("The '" + event.key + "' key is pressed.");
+        }
+
+        if (event.code !== "KeyA" && event.code !== "KeyS" && event.code !== "KeyD" && event.code !== "KeyF" && event.code !== "KeyG" && event.code !== "KeyH" && event.code !== "KeyJ") {
+            console.log("ANY KEY PRESSED");
+        }
+    });
+
+</script>
+</body>
+</html>
