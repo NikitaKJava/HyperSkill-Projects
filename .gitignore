@@ -1,0 +1,12 @@
+*/task/
+**/node_modules
+*/.idea
+*.yml
+*.yaml
+*.json
+*.xml
+*.cmd
+*.iml
+*.storageData
+*.storageRecordIndex
+
