@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/25551/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Wed, 28 Jun 2023 08:07:03 UTC"
+update_date: "Mon, 03 Jul 2023 22:10:10 UTC"
 stages:
 - id: 927
   step: 13194
@@ -142,10 +142,10 @@ topics:
     theory_id: 8154
   - title: Multi-line programs
     theory_id: 8162
-  - title: Variables
-    theory_id: 8186
   - title: Strings and numbers
     theory_id: 8194
+  - title: Variables
+    theory_id: 8186
   - title: Arithmetic operators
     theory_id: 8372
   - title: Functions

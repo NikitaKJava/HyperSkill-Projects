@@ -1,0 +1,47 @@
+body {
+    background: url("assets/bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+h1 ~ img {
+    height: 300px;
+}
+
+.portfolio {
+    display: block;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.portfolio > img {
+    height: 250px;
+}
+#navbar {
+    background-color: black;
+    opacity: 0.9;
+    margin: 0 auto;
+}
+
+#navbar li {
+    display: inline-block;
+    float: right;
+}
+
+#navbar a {
+    display: inline-block;
+    /*float: right;*/
+    padding: 20px 30px;
+    color: white;
+    list-style-type: none;
+}
+
+#navbar a:hover {
+    background-color: white;
+    color: black;
+}
+
+#media li {
+    display: inline-block;
+    margin-right: 10px;
+    justify-content: center;
+}
