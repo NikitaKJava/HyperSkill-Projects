@@ -2,7 +2,6 @@ const path = require('path');
 const pagePath = 'file://' + path.resolve(__dirname, '../src/index.html');
 const {StageTest, correct, wrong} = require('hs-test-web');
 
-
 class PortfolioTest extends StageTest {
 
     page = this.getPage(pagePath)
@@ -39,7 +38,7 @@ class PortfolioTest extends StageTest {
             let title = header.textContent || header.innerText;
 
             if (!title || title.length === 0) {
-                return wrong('Cannot find a text within h1 element.');
+                return wrong('Cannot find a text within h1 element');
             }
 
             return correct();
@@ -160,6 +159,21 @@ class PortfolioTest extends StageTest {
             if (noCustomFooterColor && !hasBackgroundImage) {
                 return wrong("Looks like footer's background color is not set. " +
                     "It should be an image or some non-white color.")
+            }
+
+            return correct()
+        }),
+        this.page.execute(() => {
+            let buttons = document.getElementsByClassName('open-window');
+
+            if (buttons === null || buttons.length === 0) {
+                return wrong('Cannot find a button with the class "open-window" to open the pop-up window.');
+            }
+
+            let forms = document.getElementsByClassName('window');
+
+            if (forms === null || forms.length === 0) {
+                return wrong('Cannot find the element with the class "window".');
             }
 
             return correct()

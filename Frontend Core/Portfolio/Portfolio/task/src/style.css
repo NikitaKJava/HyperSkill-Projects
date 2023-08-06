@@ -1,6 +1,7 @@
 body {
-    background: url("assets/bg.jpg") no-repeat;
+    background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.5)), url("assets/bg.jpg") no-repeat;
     background-size: cover;
+    color: white;
 }
 
 h1 ~ img {
@@ -18,7 +19,7 @@ h1 ~ img {
 }
 #navbar {
     background-color: black;
-    opacity: 0.9;
+    opacity: 1;
     margin: 0 auto;
 }
 
@@ -45,3 +46,12 @@ h1 ~ img {
     margin-right: 10px;
     justify-content: center;
 }
+
+header {
+    background-color: silver;
+}
+
+footer {
+    background-color: silver;
+}
+
